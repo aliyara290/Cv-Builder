@@ -12,98 +12,115 @@
     <title>Cv Builder</title>
   </head>
   <body>
-    <header
-      class="fixed flex justify-between items-center w-full px-6 h-16 bg-white"
-    >
-      <div class="logo">
-        <a href="index.html" class="flex items-center">
-          <img
-            src="../src/images/curriculum-vitae.png"
-            alt=""
-            class="w-9 pr-2"
-          />
-          <span>build <span>resume.</span></span>
-        </a>
+    <header class="absolute right-0 top-0 w-full">
+      <div class="mx-auto max-w-screen-xl px-4 py-6">
+        <div
+          class="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <h1 class="text-xl font-bold text-white">MyResume.io</h1>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <button
+              class="inline-block rounded border border-2 border-solid border-white hover:bg-white px-5 py-3 text-sm font-medium text-white transition hover:text-[#1f4d7c] focus:outline-none focus:ring"
+              type="button"
+            >
+              My CVs
+            </button>
+
+            <a
+              class="inline-flex items-center justify-center gap-1.5 rounded bg-white hover:bg-[#1d4ed8] px-5 py-3 text-gray-900 transition hover:text-white focus:outline-none focus:ring"
+              href="../src/pages/resume.html"
+            >
+              <span class="text-sm font-medium"> Get Started </span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
-      <nav class="">
-        <a href="../src/pages/resume.html">
-          <button
-            type="button"
-            class="px-4 py-2 bg-slate-600 text-sm text-white font-bold rounded-md"
-          >
-            Get Started
-          </button>
-        </a>
-      </nav>
     </header>
 
-    <section
-      class="flex flex-col items-center justify-center h-dvh bg-[#EFF2F9] px-8"
-    >
-      <div class="flex flex-col items-center sm:w-4/5 md:w-3/5">
-        <div class="pb-6">
-          <h1 class="text-center text-3xl font-bold">
+    <section class="bg-gray-900 text-white">
+      <div
+        class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center"
+      >
+        <div class="mx-auto max-w-3xl text-center">
+          <h1
+            class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+          >
             Only 2% of resumes make it pas the first round. Be in the top 2%
           </h1>
-        </div>
-        <div class="pb-6">
-          <p class="text-center text-lg text-black">
+
+          <p class="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
             Use professional field-tested resume templates that follow that
             exact 'resume rules' employers look for. Easy to use and done within
             minutes - try now for free!
           </p>
-        </div>
-        <div class="">
-          <a href="../src/pages/resume.html">
-            <button
-              class="px-6 py-5 bg-slate-600 text-lg text-white font-bold rounded-md"
+
+          <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              class="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+              href="../src/pages/resume.html"
             >
               Create My Resume
-            </button>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="my-12 px-6">
-      <div class="sm:w-11/12 mx-auto grid grid-cols-1 gap-7 md:grid-cols-2">
-        <div class="flex items-centerjustify-center w-full h-full">
-          <img
-            src="../src/images/visual-0c7080adf17f1f207276f613447c924f667dab34b7ac415cd7ef653172defd0b.svg"
-            alt="pic"
-            class="w-full h-full"
-          />
-        </div>
-        <div class="flex flex-col items-center md:items-start">
-          <div class="mb-6">
-            <h2 class="text-center md:text-start text-3xl font-bold">
-              Use the best resume maker as your guide!
-            </h2>
-          </div>
-          <div class="mb-6">
-            <p class="text-center md:text-start text-lg text-black">
-              Getting that dream job can seem like an impossible task. We're
-              here to change that. Give yourself a real advantage with the best
-              online resume maker: created by experts, improved by data, trusted
-              by millions of professionals.
-            </p>
-          </div>
-          <div>
-            <div>
-              <a href="../src/pages/resume.html">
-                <button
-                  class="px-6 py-4 bg-slate-600 text-lg text-white font-bold rounded-md"
-                >
-                  create my resume
-                </button>
-              </a>
-            </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-12 px-6 bg-[#EFF2F9]">
+    <section
+      class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 my-10 sm:my-20"
+    >
+      <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+        <div
+          class="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right"
+        >
+          <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">
+            Use the best resume maker as your guide!
+          </h2>
+
+          <p class="hidden text-gray-500 md:mt-4 md:block">
+            Getting that dream job can seem like an impossible task. We're here
+            to change that. Give yourself a real advantage with the best online
+            resume maker: created by experts, improved by data, trusted by
+            millions of professionals.
+          </p>
+
+          <div class="mt-4 md:mt-8">
+            <a
+              href="../src/pages/resume.html"
+              class="inline-block rounded bg-[#1d4ed8] px-12 py-3 text-sm font-medium text-white transition hover:bg-[#1e3269] focus:outline-none focus:ring"
+            >
+              Create My Resume
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <img
+        alt=""
+        src="https://images.unsplash.com/photo-1464582883107-8adf2dca8a9f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+        class="h-56 w-full object-cover sm:h-full"
+      />
+    </section>
+
+    <section class="py-12 px-6">
       <div class="how__heading center-col">
         <div class="pb-2">
           <h2 class="text-center text-3xl font-bold">
@@ -117,9 +134,114 @@
           </p>
         </div>
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:w-11/12 mx-auto"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:w-11/12 mx-auto mt-10"
         >
-          <div class="bg-slate-600 p-5 rounded-md flex flex-col items-center">
+          <div class="">
+            <div class="group relative block h-64 sm:h-80 lg:h-96">
+              <span
+                class="absolute inset-0 border-2 border-dashed border-black"
+              ></span>
+
+              <div
+                class="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
+              >
+                <div
+                  class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+                >
+                  <i class="fas fa-paint-brush text-3xl text-black"></i>
+
+                  <h2 class="mt-4 text-xl font-medium sm:text-2xl">
+                    Customizable Templates
+                  </h2>
+                </div>
+
+                <div
+                  class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+                >
+                  <h3 class="mt-4 text-xl font-medium sm:text-2xl">
+                    Customizable Templates
+                  </h3>
+
+                  <p class="mt-4 text-sm sm:text-base">
+                    Offer a variety of professionally designed templates that
+                    users can customize to match their personal style and
+                    preferences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <div class="group relative block h-64 sm:h-80 lg:h-96">
+              <span
+                class="absolute inset-0 border-2 border-dashed border-black"
+              ></span>
+
+              <div
+                class="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
+              >
+                <div
+                  class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+                >
+                  <i class="fas fa-file-export text-3xl text-black"></i>
+
+                  <h2 class="mt-4 text-xl font-medium sm:text-2xl">
+                    One-Click Export
+                  </h2>
+                </div>
+
+                <div
+                  class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+                >
+                  <h3 class="mt-4 text-xl font-medium sm:text-2xl">
+                    One-Click Export
+                  </h3>
+
+                  <p class="mt-4 text-sm sm:text-base">
+                    Allow users to export their CVs with a single click in
+                    multiple formats like PDF, Word, or PNG, making it easy to
+                    share and print.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <div class="group relative block h-64 sm:h-80 lg:h-96">
+              <span
+                class="absolute inset-0 border-2 border-dashed border-black"
+              ></span>
+
+              <div
+                class="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
+              >
+                <div
+                  class="p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8"
+                >
+                  <i class="fas fa-chart-line text-3xl text-black"></i>
+
+                  <h2 class="mt-4 text-xl font-medium sm:text-2xl">
+                    Skill-Based Formatting
+                  </h2>
+                </div>
+
+                <div
+                  class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
+                >
+                  <h3 class="mt-4 text-xl font-medium sm:text-2xl">
+                    Skill-Based Formatting
+                  </h3>
+
+                  <p class="mt-4 text-sm sm:text-base">
+                    Provide skill-based formatting that highlights top skills
+                    with dynamic visual aids, enabling users to showcase their
+                    strengths effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="bg-slate-600 p-5 rounded-md flex flex-col items-center">
             <div
               class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-3"
             >
@@ -174,28 +296,87 @@
                 effectively.
               </p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
 
-    <footer class="p-5">
-      <div>
-        <div>
-          <p class="text-center text-md text-black">
-            &copy;Copyright 2022. All Rights Reserved -
-            <span
-              >build by
-              <a
-                href="http://www.aliyara.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-blue-700 underline"
-                >Ali Yara</a
-              ></span
+    <footer class="bg-gray-900 p-5">
+      <div
+        class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24"
+      >
+        <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
+          <a
+            class="inline-block rounded-full bg-[#1d4ed8]  text-white shadow transition sm:p-3 lg:p-4"
+            href="#hero"
+          >
+            <span class="sr-only">Back to top</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-          </p>
+              <path
+                fill-rule="evenodd"
+                d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
         </div>
+
+        <div class="lg:flex lg:items-end lg:justify-between">
+          <div>
+            <div class="flex justify-center lg:justify-start">
+              <h1 class="text-xl font-bold text-white">MyResume.io</h1>
+            </div>
+
+            <p
+              class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-400 lg:text-left"
+            >
+              Use professional field-tested resume templates that follow that
+              exact 'resume rules' employers look for. Easy to use and done
+              within minutes - try now for free!
+            </p>
+          </div>
+
+          <ul
+            class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12"
+          >
+            <li>
+              <a
+                class="text-gray-400 transition underline hover:text-gray-500"
+                href="#"
+              >
+                My CVs
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-gray-400 transition underline hover:text-gray-500"
+                href="#"
+              >
+                Create New Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <p class="mt-12 text-center text-sm text-gray-400 lg:text-right">
+          &copy;Copyright 2022. All Rights Reserved -
+          <span
+            >build by
+            <a
+              href="http://www.aliyara.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-700 underline"
+              >Ali Yara</a
+            ></span
+          >
+        </p>
       </div>
     </footer>
   </body>
