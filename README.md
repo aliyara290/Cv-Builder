@@ -1,7 +1,7 @@
 
 # MyResume - CV Builder
 
-MyResume is an interactive CV builder that enables users to create and customize professional resumes with ease. Built with HTML, JavaScript, and styled with Tailwind CSS, this project provides a responsive, user-friendly interface for crafting personalized CVs.
+MyResume is an interactive CV builder that enables users to create professional resumes with ease. Built with HTML, JavaScript, and styled with Tailwind CSS, this project provides a responsive, user-friendly interface for crafting personalized CVs.
 
 ## Features
 
@@ -31,8 +31,7 @@ Open the project folder and launch `index.html` in your preferred web browser to
 
 1. ✍️ **Enter Details**: Fill in your personal information, work experience, education, skills, and other CV sections.
 2. 👀 **Preview CV**: See real-time updates of your CV as you add information.
-3. 🎨 **Customize**: Apply different color themes and layout options to match your style.
-4. 📥 **Download CV**: Generate a downloadable version of your completed CV (feature in development).
+3. 📥 **Download CV**: Generate a downloadable version of your completed CV (feature in development).
 
 ## Color Palette
 
