@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/output.css" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/f01941449c.js"
       crossorigin="anonymous"
@@ -15,34 +20,134 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Cv Builder</title>
+    <title>MyResume - Cv Builder</title>
   </head>
   <body>
     <main class="flex">
       <div class="w-2/4 p-12">
-        <header>
-          <div class="hamburger cursor-pointer fixed left-1 top-2 w-10 h-10 flex justify-center items-center">
+        <!-- header  -->
+        <header class="header__cnt">
+          <div
+            class="hamburger cursor-pointer fixed left-1 top-2 w-10 h-10 flex justify-center items-center z-50"
+            id="hamburger__icon"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
+              viewBox="0 0 48 48"
+              width="30"
+              height="30"
+              id="svg__icon"
+              class="svg__icon-c"
             >
-              <g id="24x24/Menu">
-                <path
-                  id="Shape"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M3.5 5C3.5 4.17157 4.17157 3.5 5 3.5C5.82843 3.5 6.5 4.17157 6.5 5C6.5 5.82843 5.82843 6.5 5 6.5C4.17157 6.5 3.5 5.82843 3.5 5ZM3.5 12C3.5 11.1716 4.17157 10.5 5 10.5C5.82843 10.5 6.5 11.1716 6.5 12C6.5 12.8284 5.82843 13.5 5 13.5C4.17157 13.5 3.5 12.8284 3.5 12ZM5 17.5C4.17157 17.5 3.5 18.1716 3.5 19C3.5 19.8284 4.17157 20.5 5 20.5C5.82843 20.5 6.5 19.8284 6.5 19C6.5 18.1716 5.82843 17.5 5 17.5ZM10.5 5C10.5 4.17157 11.1716 3.5 12 3.5C12.8284 3.5 13.5 4.17157 13.5 5C13.5 5.82843 12.8284 6.5 12 6.5C11.1716 6.5 10.5 5.82843 10.5 5ZM12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5ZM10.5 19C10.5 18.1716 11.1716 17.5 12 17.5C12.8284 17.5 13.5 18.1716 13.5 19C13.5 19.8284 12.8284 20.5 12 20.5C11.1716 20.5 10.5 19.8284 10.5 19ZM19 3.5C18.1716 3.5 17.5 4.17157 17.5 5C17.5 5.82843 18.1716 6.5 19 6.5C19.8284 6.5 20.5 5.82843 20.5 5C20.5 4.17157 19.8284 3.5 19 3.5ZM17.5 12C17.5 11.1716 18.1716 10.5 19 10.5C19.8284 10.5 20.5 11.1716 20.5 12C20.5 12.8284 19.8284 13.5 19 13.5C18.1716 13.5 17.5 12.8284 17.5 12ZM19 17.5C18.1716 17.5 17.5 18.1716 17.5 19C17.5 19.8284 18.1716 20.5 19 20.5C19.8284 20.5 20.5 19.8284 20.5 19C20.5 18.1716 19.8284 17.5 19 17.5Z"
-                ></path>
-              </g>
+              <circle
+                cx="12"
+                cy="12"
+                r="3"
+                stroke-width="2"
+                class="circle"
+              ></circle>
+              <circle
+                cx="24"
+                cy="12"
+                r="3"
+                stroke-width="2"
+                class="circle circle_hide"
+              ></circle>
+              <circle
+                cx="36"
+                cy="12"
+                r="3"
+                stroke-width="2"
+                class="circle"
+              ></circle>
+              <circle
+                cx="36"
+                cy="24"
+                r="3"
+                stroke-width="2"
+                class="circle circle_hide"
+              ></circle>
+              <circle
+                cx="36"
+                cy="36"
+                r="3"
+                stroke-width="2"
+                class="circle"
+              ></circle>
+              <circle
+                cx="24"
+                cy="36"
+                r="3"
+                stroke-width="2"
+                class="circle circle_hide"
+              ></circle>
+              <circle
+                cx="12"
+                cy="36"
+                r="3"
+                stroke-width="2"
+                class="circle"
+              ></circle>
+              <circle
+                cx="12"
+                cy="24"
+                r="3"
+                stroke-width="2"
+                class="circle_hide"
+              ></circle>
+              <rect
+                x="21"
+                y="21"
+                width="6px"
+                height="6px"
+                rx="3"
+                ry="3"
+                stroke-width="2"
+                class="rect rect_1"
+              ></rect>
+              <rect
+                x="21"
+                y="21"
+                width="6px"
+                height="6px"
+                rx="3"
+                ry="3"
+                stroke-width="2"
+                class="rect rect_2"
+              ></rect>
             </svg>
+          </div>
+          <!-- header menu list  -->
+          <div
+            class="w-52 h-dvh fixed top-0 left-0 bg-[#656e83] z-20 shadow-xl"
+            id="nav__menu"
+          >
+            <ul class="flex flex-col gap-2 mt-24 pl-4">
+              <li>
+                <a
+                  class="text-white hover:text-[#b6c7d2]"
+                  href="../../public/index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a class="text-white hover:text-[#b6c7d2]" href="./mycv.html"
+                  >My CVs list</a
+                >
+              </li>
+              <div
+                title="Coming soon..."
+                class="absolute bottom-4 left-4 cursor-pointer text-white hover:text-[#b6c7d2]"
+              >
+                <i class="fa-solid fa-gear text-xl"></i>
+              </div>
+            </ul>
           </div>
         </header>
         <div
           class="progress flex justify-center mb-10 bg-white py-4 sticky top-0"
         >
-          <div class="flex items-center gap-5 relative">
+          <div class="flex items-center gap-8 relative">
             <div
               title="Personal Details"
               class="w-7 h-7 rounded-full border border-solid border-blue-700 border-2 bg-blue-700 text-white flex justify-center items-center relative z-10"
@@ -88,7 +193,7 @@
           </div>
         </div>
         <div class="form__inputs">
-          <form action="" class="flex flex-col gap-12">
+          <form action="" class="flex flex-col gap-12" id="inputes__form">
             <div class="personal__section">
               <div class="section-title">
                 <h2>Personal details</h2>
@@ -99,7 +204,12 @@
                     <h3 for="job__title">Job Title</h3>
                   </div>
                   <div class="">
-                    <input type="text" id="job__title" name="job__title" />
+                    <input
+                      type="text"
+                      id="job__title"
+                      name="job__title"
+                      class="input-field"
+                    />
                   </div>
                 </div>
                 <div class="">
@@ -135,7 +245,12 @@
                     <h3 for="first__name">First Name</h3>
                   </div>
                   <div class="">
-                    <input type="text" id="first__name" name="first__name" />
+                    <input
+                      type="text"
+                      id="first__name"
+                      name="first__name"
+                      class="input-field"
+                    />
                   </div>
                 </div>
                 <div class="">
@@ -168,22 +283,40 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
                 <div class="">
                   <div class="">
-                    <h3 for="input__country">Country</h3>
+                    <h3 for="input__addresse">Adresse</h3>
                   </div>
                   <div class="">
                     <input
                       type="text"
-                      id="input__country"
-                      name="input__country"
+                      id="input__addresse"
+                      name="input__addresse"
                     />
                   </div>
                 </div>
                 <div class="">
                   <div class="">
-                    <h3 for="input__city">City</h3>
+                    <h3 for="input__linkedin">Linkedin</h3>
                   </div>
                   <div class="">
-                    <input type="text" id="input__city" name="input__city" />
+                    <input
+                      type="text"
+                      id="input__linkedin"
+                      name="input__linkedin"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
+                <div class="">
+                  <div class="">
+                    <h3 for="input__linkedin">Website</h3>
+                  </div>
+                  <div class="">
+                    <input
+                      type="text"
+                      id="input__website"
+                      name="input__website"
+                    />
                   </div>
                 </div>
               </div>
@@ -202,13 +335,14 @@
                 </div>
               </div>
               <div class="">
-                <div class="">
-                  <textarea
+                <div class="descriptions" id="summary__description">
+                  <!-- <textarea
                     name="textarea__summary"
                     id="textarea__summary"
                     placeholder="Curious science teacher with 8+ years of experience and a track record of..."
                     cols="auto"
-                  ></textarea>
+                    maxlength="250"
+                  ></textarea> -->
                 </div>
               </div>
             </div>
@@ -225,87 +359,121 @@
                   </p>
                 </div>
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
-                <div class="">
-                  <div class="">
-                    <h3 for="job__title-ex">Job title</h3>
+              <div id="experiences__list">
+                <div
+                  class="experience__card border border-2 border-[#eff2f9] border-solid p-5 rounded-md"
+                >
+                  <div class="flex justify-between items-center">
+                    <div class="">
+                      <h4>DevOps Enginner</h4>
+                      <span class="text-sm text-[#828ba2]"
+                        >Jan 2024 - Present</span
+                      >
+                    </div>
+                    <div class="">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
                   </div>
-                  <div class="">
-                    <input
-                      type="text"
-                      id="job__title-ex"
-                      name="job__title-ex"
-                    />
-                  </div>
-                </div>
-                <div class="">
-                  <div class="">
-                    <h3 for="employer__name">Employer</h3>
-                  </div>
-                  <div class="">
-                    <input
-                      type="text"
-                      id="employer__name"
-                      name="employer__name"
-                    />
+                  <div class="pt-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
+                      <div class="">
+                        <div class="">
+                          <h3 for="job__title-ex">Job title</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="job__title-ex"
+                            name="job__title-ex"
+                          />
+                        </div>
+                      </div>
+                      <div class="">
+                        <div class="">
+                          <h3 for="employer__name">Employer</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="employer__name"
+                            name="employer__name"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
+                      <div class="">
+                        <div class="">
+                          <h3>Start & End Date</h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <div class="">
+                            <input
+                              type="date"
+                              id="experience__date-start"
+                              name="experience__date-start"
+                            />
+                          </div>
+                          <div class="">
+                            <input
+                              type="date"
+                              id="experience__date-end"
+                              name="experience__date-end"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="">
+                        <div class="">
+                          <h3 for="input__city-ex">City</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="input__city-ex"
+                            name="input__city-ex"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <div class="">
+                          <h3 for="input__city-ex">description</h3>
+                        </div>
+                        <div class="">
+                          <div
+                            class="descriptions"
+                            id="experience__description"
+                          >
+                            <!-- <textarea
+                                name="textarea__experience"
+                                id="textarea__experience"
+                                placeholder="Curious science teacher with 8+ years of experience and a track record of..."
+                                maxlength="400"
+                              ></textarea> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
-                <div class="">
-                  <div class="">
-                    <h3>Start & End Date</h3>
-                  </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <div class="">
-                      <input
-                        type="date"
-                        id="experience__date-start"
-                        name="experience__date-start"
-                      />
-                    </div>
-                    <div class="">
-                      <input
-                        type="date"
-                        id="experience__date-end"
-                        name="experience__date-end"
-                      />
-                    </div>
-                  </div>
+              <div
+                class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
+              >
+                <div class="mr-2">
+                  <i class="fa-solid fa-plus text-[#0d59e6]"></i>
                 </div>
                 <div class="">
-                  <div class="">
-                    <h3 for="input__city-ex">City</h3>
-                  </div>
-                  <div class="">
-                    <input
-                      type="text"
-                      id="input__city-ex"
-                      name="input__city-ex"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="">
-                <div class="">
-                  <div class="">
-                    <h3 for="input__city-ex">description</h3>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <textarea
-                        name="textarea__experience"
-                        id="textarea__experience"
-                        placeholder="Curious science teacher with 8+ years of experience and a track record of..."
-                        cols="auto"
-                      ></textarea>
-                    </div>
-                  </div>
+                  <span class="text-sm text-[#0d59e6] font-medium"
+                    >Add one more experience</span
+                  >
                 </div>
               </div>
             </div>
             <div class="education__section">
-              <div class="">
+              <div class="heading">
                 <div class="section-title">
                   <h2>Education</h2>
                 </div>
@@ -316,78 +484,109 @@
                   </p>
                 </div>
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
-                <div class="">
-                  <div class="">
-                    <h3 for="school__name">School</h3>
+              <div id="educations__list">
+                <div
+                  class="ecucation__card border border-2 border-[#eff2f9] border-solid p-5 rounded-md"
+                >
+                  <div class="flex justify-between items-center">
+                    <div class="">
+                      <h4>YouCode | UM6P</h4>
+                      <span class="text-sm text-[#828ba2]"
+                        >Sep 2024 - Present</span
+                      >
+                    </div>
+                    <div class="">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
                   </div>
-                  <div class="">
-                    <input type="text" id="school__name" name="school__name" />
-                  </div>
-                </div>
-                <div class="">
-                  <div class="">
-                    <h3 for="school__degree">Degree</h3>
-                  </div>
-                  <div class="">
-                    <input
-                      type="text"
-                      id="school__degree"
-                      name="school__degree"
-                    />
+                  <div class="pt-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
+                      <div class="">
+                        <div class="">
+                          <h3 for="school__name">School</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="school__name"
+                            name="school__name"
+                          />
+                        </div>
+                      </div>
+                      <div class="">
+                        <div class="">
+                          <h3 for="school__degree">Degree</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="school__degree"
+                            name="school__degree"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
+                      <div class="">
+                        <div class="">
+                          <h3>Start & End Date</h3>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <div class="">
+                            <input
+                              type="date"
+                              id="school__date-start"
+                              name="school__date-start"
+                            />
+                          </div>
+                          <div class="">
+                            <input
+                              type="date"
+                              id="school__date-end"
+                              name="school__date-end"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="">
+                        <div class="">
+                          <h3>City</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="input__city-school"
+                            name="input__city-school"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <div class="">
+                          <h3>Description</h3>
+                        </div>
+                        <div class="">
+                          <div
+                            class="descriptions"
+                            id="education__description"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
-                <div class="">
-                  <div class="">
-                    <h3>Start & End Date</h3>
-                  </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <div class="">
-                      <input
-                        type="date"
-                        id="school__date-start"
-                        name="school__date-start"
-                      />
-                    </div>
-                    <div class="">
-                      <input
-                        type="date"
-                        id="school__date-end"
-                        name="school__date-end"
-                      />
-                    </div>
-                  </div>
+              <div
+                class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
+              >
+                <div class="mr-2">
+                  <i class="fa-solid fa-plus text-[#0d59e6]"></i>
                 </div>
                 <div class="">
-                  <div class="">
-                    <h3>City</h3>
-                  </div>
-                  <div class="">
-                    <input
-                      type="text"
-                      id="input__city-school"
-                      name="input__city-school"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="">
-                <div class="">
-                  <div class="">
-                    <h3>Description</h3>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <textarea
-                        name="textarea__school"
-                        id="textarea__school"
-                        placeholder="Curious science teacher with 8+ years of experience and a track record of..."
-                        cols="auto"
-                      ></textarea>
-                    </div>
-                  </div>
+                  <span class="text-sm text-[#0d59e6] font-medium"
+                    >Add one more education</span
+                  >
                 </div>
               </div>
             </div>
@@ -403,40 +602,56 @@
                   </p>
                 </div>
               </div>
-              <div class="border border-2 border-[#eff2f9] border-solid p-5">
-                <div class="flex justify-between items-center">
-                  <div class="">
-                    <h4>Styled-Components</h4>
+              <div id="skills__list">
+                <div
+                  class="skill__card border border-2 border-[#eff2f9] border-solid p-5"
+                >
+                  <div class="flex justify-between items-center">
+                    <div class="">
+                      <h4>Styled-Components</h4>
+                    </div>
+                    <div class="">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </div>
                   </div>
-                  <div class="">
-                    <i class="fa-solid fa-chevron-down"></i>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4 pt-5">
+                    <div class="">
+                      <div class="">
+                        <h3>Skill</h3>
+                      </div>
+                      <div class="">
+                        <input
+                          type="text"
+                          id="skill__name"
+                          name="skill__name"
+                        />
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <h3>Level</h3>
+                      </div>
+                      <div class="">
+                        <input
+                          type="text"
+                          id="skill__level"
+                          name="skill__level"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4 pt-5">
-                  <div class="">
-                    <div class="">
-                      <h3 for="school__name">Skill</h3>
-                    </div>
-                    <div class="">
-                      <input
-                        type="text"
-                        id="school__name"
-                        name="school__name"
-                      />
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="">
-                      <h3>Level</h3>
-                    </div>
-                    <div class="">
-                      <input
-                        type="text"
-                        id="school__degree"
-                        name="school__degree"
-                      />
-                    </div>
-                  </div>
+              </div>
+              <div
+                class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
+              >
+                <div class="mr-2">
+                  <i class="fa-solid fa-plus text-[#0d59e6]"></i>
+                </div>
+                <div class="">
+                  <span class="text-sm text-[#0d59e6] font-medium"
+                    >Add one more skill</span
+                  >
                 </div>
               </div>
             </div>
@@ -455,7 +670,7 @@
               <div class="border border-2 border-[#eff2f9] border-solid p-5">
                 <div class="flex justify-between items-center">
                   <div class="">
-                    <h4>ehijvdsc</h4>
+                    <h4>Full Stack Web Developer</h4>
                   </div>
                   <div class="">
                     <i class="fa-solid fa-chevron-down"></i>
@@ -511,6 +726,18 @@
                   </div>
                 </div>
               </div>
+              <div
+                class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
+              >
+                <div class="mr-2">
+                  <i class="fa-solid fa-plus text-[#0d59e6]"></i>
+                </div>
+                <div class="">
+                  <span class="text-sm text-[#0d59e6] font-medium"
+                    >Add one more course</span
+                  >
+                </div>
+              </div>
             </div>
             <div class="languages__section">
               <div class="">
@@ -527,7 +754,7 @@
               <div class="border border-2 border-[#eff2f9] border-solid p-5">
                 <div class="flex justify-between items-center">
                   <div class="">
-                    <h4>ehijvdsc</h4>
+                    <h4>English</h4>
                   </div>
                   <div class="">
                     <i class="fa-solid fa-chevron-down"></i>
@@ -562,18 +789,318 @@
                   </div>
                 </div>
               </div>
+              <div
+                class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
+              >
+                <div class="mr-2">
+                  <i class="fa-solid fa-plus text-[#0d59e6]"></i>
+                </div>
+                <div class="">
+                  <span class="text-sm text-[#0d59e6] font-medium"
+                    >Add one more language</span
+                  >
+                </div>
+              </div>
             </div>
-            <div class="enterest__section"></div>
+            <!-- <div class="enterest__section"></div> -->
+            <button type="submit" id="save__data">Submit</button>
           </form>
         </div>
       </div>
       <div
         class="preview__content fixed top-0 right-0 bg-[#656e83] w-2/4 h-dvh flex flex-col justify-end items-center pb-10"
       >
-        <div class="previwe__section">
-          <div class="prev__side"></div>
+        <header class="flex justify-center items-center gap-6 absolute top-3">
+          <div
+            class="flex items-center cursor-pointer hover:bg-[#5c6477] py-2.5 px-2 rounded-xl"
+            id="select__template"
+          >
+            <div class="mr-2">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+              >
+                <path
+                  d="M5.5 5.5v4h4v-4h-4zM11 4v7H4V4h7zm3.5 1.5v4h4v-4h-4zM20 4v7h-7V4h7zM5.5 14.5v4h4v-4h-4zM11 13v7H4v-7h7zm3.5 1.5v4h4v-4h-4zM20 13v7h-7v-7h7z"
+                ></path>
+              </svg>
+            </div>
+            <button type="button" class="text-white text-md">
+              Select Template
+            </button>
+          </div>
+          <div class="">
+            <button
+              type="button"
+              class="py-2.5 px-4 bg-[#1170cd] hover:bg-[#1f4d7c] text-white text-md rounded-xl"
+              id="download__pdf"
+            >
+              Download PDF
+            </button>
+          </div>
+        </header>
+        <div class="previwe__section flex bg-white">
+          <!-- <p class="preview-name"></p>
+            <p class="preview-job-title"></p> -->
+          <div
+            class="resume__side h-full w-1/3 bg-[#082a4d] p-4 flex flex-col gap-2"
+          >
+            <div class="pic w-full h-28 bg-white p-1">
+              <div class="w-full h-full bg-[#5c6477] overflow-hidden">
+                <img
+                  class="w-full h-full object-cover"
+                  src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="pic"
+                />
+              </div>
+            </div>
+            <div class="contact leading-none pt-2">
+             
+            </div>
+            <div class="skills leading-none">
+              <span
+                class="section-name leading-normal text-[10px] font-medium uppercase text-white"
+                >skills</span
+              >
+              <ul class="mt-2 flex flex-col gap-1.5">
+                <li class="text-[8px] text-gray-200">html</li>
+                <li class="text-[8px] text-gray-200">css</li>
+                <li class="text-[8px] text-gray-200">JavaScript</li>
+                <li class="text-[8px] text-gray-200">Tailwind</li>
+                <li class="text-[8px] text-gray-200">GSAP</li>
+                <li class="text-[8px] text-gray-200">Axios</li>
+                <li class="text-[8px] text-gray-200">CI/CD</li>
+                <li class="text-[8px] text-gray-200">Php</li>
+                <li class="text-[8px] text-gray-200">SQL</li>
+              </ul>
+            </div>
+            <div class="languages leading-none">
+              <span
+                class="section-name leading-normal text-[10px] font-medium uppercase text-white"
+                >Languages</span
+              >
+              <ul class="mt-2 flex flex-col gap-1.5">
+                <li class="text-[8px] text-gray-200">Arabic | Native</li>
+                <li class="text-[8px] text-gray-200">English | Fluent</li>
+                <li class="text-[8px] text-gray-200">French | Intermediate</li>
+                <li class="text-[8px] text-gray-200">Germany | Basic</li>
+              </ul>
+            </div>
+            <div class="Interests leading-none">
+              <span
+                class="section-name leading-normal text-[10px] font-medium uppercase text-white"
+                >Interests</span
+              >
+              <ul class="mt-2 flex flex-col gap-1.5">
+                <li class="text-[8px] text-gray-200">Coding</li>
+                <li class="text-[8px] text-gray-200">Sport</li>
+                <li class="text-[8px] text-gray-200">Swimming</li>
+                <li class="text-[8px] text-gray-200">Learning</li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-2/3 h-full p-4 leading-normal">
+            <div class="full-name leading-4 py-3">
+              
+            </div>
+            <div class="flex flex-col gap-2 mt-4">
+              <div class="summary" id="summary__section">
+                
+              </div>
+              <div class="experience">
+                <div
+                  class="prev__section-title leading-4 text-[10px] font-bold uppercase text-gray-700 border-b-2 border-gray-400"
+                >
+                  professional experience
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="leading-4">
+                    <div
+                      class="flex justify-between items-center gap-3 leading-4"
+                    >
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >DevOps Enginner</span
+                        >
+                      </div>
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >Oct 2023 - Present</span
+                        >
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <ul class="ml-3 flex flex-col leading-none">
+                          <li
+                            class="text-[8px] text-gray-700 list-disc leading-normal"
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Consequatur, voluptas!
+                          </li>
+                          <li
+                            class="text-[8px] text-gray-700 list-disc leading-normal"
+                          >
+                            Lorem ipsum dolor si ipisicing elit. Consequatur,
+                            voluptas!
+                          </li>
+                          <li
+                            class="text-[8px] text-gray-700 list-disc leading-normal"
+                          >
+                            Lorem ipsum adipisicing elit. Consequatur, voluptas!
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="leading-4">
+                    <div
+                      class="flex justify-between items-center gap-3 leading-4"
+                    >
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >DevOps Enginner</span
+                        >
+                      </div>
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >Oct 2023 - Present</span
+                        >
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <ul class="ml-3 flex flex-col leading-none">
+                          <li
+                            class="text-[8px] text-gray-700 list-disc leading-normal"
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Consequatur, voluptas!
+                          </li>
+                          <li
+                            class="text-[8px] text-gray-700 list-disc leading-normal"
+                          >
+                            Lorem ipsum dolor si ipisicing elit. Consequatur,
+                            voluptas!
+                          </li>
+                          <li
+                            class="text-[8px] text-gray-700 list-disc leading-normal"
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Consequatur, voluptas!
+                          </li>
+                          <li
+                            class="text-[8px] text-gray-700 list-disc leading-normal"
+                          >
+                            Lorem ipsum adipisicing elit. Consequatur, voluptas!
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="education">
+                <div
+                  class="prev__section-title leading-4 text-[10px] font-bold uppercase text-gray-700 border-b-2 border-gray-400"
+                >
+                  Education
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <div class="leading-4">
+                    <div
+                      class="flex justify-between items-center gap-3 leading-4"
+                    >
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >YouCode | UM6P</span
+                        >
+                      </div>
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >Sep 2024 - Present</span
+                        >
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <p class="text-[8px] text-gray-700 leading-normal">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Qui, doloremque!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="leading-4">
+                    <div
+                      class="flex justify-between items-center gap-3 leading-4"
+                    >
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >Baccalaureate Science Humain</span
+                        >
+                      </div>
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >Jun 2021</span
+                        >
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <p class="text-[8px] text-gray-700 leading-normal">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Qui, doloremque!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="courses">
+                <div
+                  class="prev__section-title leading-4 text-[10px] font-bold uppercase text-gray-700 border-b-2 border-gray-400"
+                >
+                  Certificats & Courses
+                </div>
+                <div class="flex flex-col gap-0.5">
+                  <div class="leading-4">
+                    <div
+                      class="flex justify-between items-center gap-3 leading-4"
+                    >
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >DevOps Course</span
+                        >
+                      </div>
+                      <div class="">
+                        <span class="text-[8px] text-gray-800 font-medium"
+                          >Oct 2024 - Present</span
+                        >
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <p class="text-[8px] text-gray-700 leading-normal">
+                          Étudiant en DevOps sur Udemy, avec apprentissage de
+                          CI/CD et de l'automatisation via Docker, Kubernetes,
+                          Jenkins, et Git pour optimiser le développement et les
+                          déploiements.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
+    <script src="../js/main.js"></script>
   </body>
 </html>
