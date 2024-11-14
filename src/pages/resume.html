@@ -335,14 +335,14 @@
                 </div>
               </div>
               <div class="">
-                <div class="descriptions" id="summary__description">
-                  <!-- <textarea
+                <div id="summary__description">
+                  <textarea
                     name="textarea__summary"
                     id="textarea__summary"
                     placeholder="Curious science teacher with 8+ years of experience and a track record of..."
                     cols="auto"
                     maxlength="250"
-                  ></textarea> -->
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -359,22 +359,20 @@
                   </p>
                 </div>
               </div>
-              <div id="experiences__list">
+              <div id="experiences__list" class="flex flex-col gap-5">
                 <div
-                  class="experience__card border border-2 border-[#eff2f9] border-solid p-5 rounded-md"
+                  class="experience__card border border-2 border-[#eff2f9] border-solid p-5 rounded-md relative"
                 >
-                  <div class="flex justify-between items-center">
+                  <div class="flex justify-between items-center section__card-header">
                     <div class="">
-                      <h4>DevOps Enginner</h4>
-                      <span class="text-sm text-[#828ba2]"
-                        >Jan 2024 - Present</span
-                      >
+                      <h4 class="experience__jobtitle">(Untitled)</h4>
+                      <span class="text-sm text-[#828ba2]"></span>
                     </div>
                     <div class="">
                       <i class="fa-solid fa-chevron-down"></i>
                     </div>
                   </div>
-                  <div class="pt-5">
+                  <div class="pt-5 hide__section">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
                       <div class="">
                         <div class="">
@@ -403,23 +401,62 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
                       <div class="">
-                        <div class="">
-                          <h3>Start & End Date</h3>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          <div class="">
-                            <input
-                              type="date"
-                              id="experience__date-start"
-                              name="experience__date-start"
-                            />
+                        <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
+                          <div class="grid grid-cols-2 gap-5">
+                            <div class="flex flex-col">
+                              <h3>Start Month</h3>
+                              <select
+                                name="exp__start-month"
+                                id="exp__start-month"
+                              >
+                                <option disabled selected>MM</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                              </select>
+                            </div>
+                            <div class="flex flex-col">
+                              <h3>Start Year</h3>
+                              <input type="text" name="exp__start-year" id="exp__start-year" placeholder="YYYY"/>
+                            </div>
                           </div>
                           <div class="">
-                            <input
-                              type="date"
-                              id="experience__date-end"
-                              name="experience__date-end"
-                            />
+                            <div class="grid grid-cols-2 gap-5">
+                              <div class="flex flex-col">
+                                <h3>End Month</h3>
+                                <select
+                                  name="exp__end-month"
+                                  id="exp__end-month"
+                                >
+                                  <option disabled selected>MM</option>
+                                  <option value="January">January</option>
+                                  <option value="February">February</option>
+                                  <option value="March">March</option>
+                                  <option value="April">April</option>
+                                  <option value="May">May</option>
+                                  <option value="June">June</option>
+                                  <option value="July">July</option>
+                                  <option value="August">August</option>
+                                  <option value="September">September</option>
+                                  <option value="October">October</option>
+                                  <option value="November">November</option>
+                                  <option value="December">December</option>
+                                </select>
+                              </div>
+                              <div class="flex flex-col">
+                                <h3 for="">End Year</h3>
+                                <input type="text" name="exp__end-year" id="exp__end-year" placeholder="YYYY" />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -461,6 +498,7 @@
               </div>
               <div
                 class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
+                id="add__experience-btn"
               >
                 <div class="mr-2">
                   <i class="fa-solid fa-plus text-[#0d59e6]"></i>
@@ -484,22 +522,20 @@
                   </p>
                 </div>
               </div>
-              <div id="educations__list">
+              <div id="educations__list" class="flex flex-col gap-5">
                 <div
-                  class="ecucation__card border border-2 border-[#eff2f9] border-solid p-5 rounded-md"
+                  class="ecucation__card border border-2 border-[#eff2f9] border-solid p-5 rounded-md relative"
                 >
-                  <div class="flex justify-between items-center">
+                  <div class="flex justify-between items-center section__card-header">
                     <div class="">
-                      <h4>YouCode | UM6P</h4>
-                      <span class="text-sm text-[#828ba2]"
-                        >Sep 2024 - Present</span
-                      >
+                      <h4>(Untitled)</h4>
+                      <span class="text-sm text-[#828ba2]"></span>
                     </div>
                     <div class="">
                       <i class="fa-solid fa-chevron-down"></i>
                     </div>
                   </div>
-                  <div class="pt-5">
+                  <div class="pt-5  hide__section">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
                       <div class="">
                         <div class="">
@@ -528,23 +564,62 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4">
                       <div class="">
-                        <div class="">
-                          <h3>Start & End Date</h3>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          <div class="">
-                            <input
-                              type="date"
-                              id="school__date-start"
-                              name="school__date-start"
-                            />
+                        <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
+                          <div class="grid grid-cols-2 gap-5">
+                            <div class="flex flex-col">
+                              <h3>Start Month</h3>
+                              <select
+                                name="education__start-month"
+                                id="education__start-month"
+                              >
+                                <option disabled selected>MM</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                              </select>
+                            </div>
+                            <div class="flex flex-col">
+                              <h3>Start Year</h3>
+                              <input type="text" name="education__start-year" id="education__start-year" placeholder="YYYY"/>
+                            </div>
                           </div>
                           <div class="">
-                            <input
-                              type="date"
-                              id="school__date-end"
-                              name="school__date-end"
-                            />
+                            <div class="grid grid-cols-2 gap-5">
+                              <div class="flex flex-col">
+                                <h3>End Month</h3>
+                                <select
+                                  name="education__end-month"
+                                  id="education__end-month"
+                                >
+                                  <option disabled selected>MM</option>
+                                  <option value="January">January</option>
+                                  <option value="February">February</option>
+                                  <option value="March">March</option>
+                                  <option value="April">April</option>
+                                  <option value="May">May</option>
+                                  <option value="June">June</option>
+                                  <option value="July">July</option>
+                                  <option value="August">August</option>
+                                  <option value="September">September</option>
+                                  <option value="October">October</option>
+                                  <option value="November">November</option>
+                                  <option value="December">December</option>
+                                </select>
+                              </div>
+                              <div class="flex flex-col">
+                                <h3 for="">End Year</h3>
+                                <input type="text" name="education__end-year" id="education__end-year" placeholder="YYYY" />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -561,7 +636,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="">
+                    <!-- <div class="">
                       <div class="">
                         <div class="">
                           <h3>Description</h3>
@@ -573,11 +648,12 @@
                           ></div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
               <div
+                id="add__education-btn"
                 class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
               >
                 <div class="mr-2">
@@ -602,47 +678,39 @@
                   </p>
                 </div>
               </div>
-              <div id="skills__list">
+              <div id="skills__list" class="flex flex-col gap-5">
                 <div
-                  class="skill__card border border-2 border-[#eff2f9] border-solid p-5"
+                  class="skill__card border border-2 border-[#eff2f9] border-solid p-5 relative"
                 >
-                  <div class="flex justify-between items-center">
+                  <div class="flex justify-between items-center section__card-header">
                     <div class="">
-                      <h4>Styled-Components</h4>
+                      <h4>(Untitled)</h4>
                     </div>
                     <div class="">
                       <i class="fa-solid fa-chevron-down"></i>
                     </div>
                   </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4 pt-5">
-                    <div class="">
+                  <div class="hide__section">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4 pt-5">
                       <div class="">
-                        <h3>Skill</h3>
-                      </div>
-                      <div class="">
-                        <input
-                          type="text"
-                          id="skill__name"
-                          name="skill__name"
-                        />
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="">
-                        <h3>Level</h3>
-                      </div>
-                      <div class="">
-                        <input
-                          type="text"
-                          id="skill__level"
-                          name="skill__level"
-                        />
+                        <div class="">
+                          <h3>Skill</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="skill__name"
+                            name="skill__name"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
+                id="add__skill-btn"
                 class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
               >
                 <div class="mr-2">
@@ -667,66 +735,113 @@
                   </p>
                 </div>
               </div>
-              <div class="border border-2 border-[#eff2f9] border-solid p-5">
-                <div class="flex justify-between items-center">
-                  <div class="">
-                    <h4>Full Stack Web Developer</h4>
-                  </div>
-                  <div class="">
-                    <i class="fa-solid fa-chevron-down"></i>
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4 pt-5">
-                  <div class="">
+              <div id="courses__list" class="flex flex-col gap-5">
+                <div
+                  class="course__card border border-2 border-[#eff2f9] border-solid p-5 relative"
+                >
+                  <div class="flex justify-between items-center section__card-header">
                     <div class="">
-                      <h3>Course</h3>
+                      <h4>(Untitled)</h4>
                     </div>
                     <div class="">
-                      <input
-                        type="text"
-                        id="course__title"
-                        name="course__title"
-                      />
+                      <i class="fa-solid fa-chevron-down"></i>
                     </div>
                   </div>
-                  <div class="">
-                    <div class="">
-                      <h3 for="course__institution">Institution</h3>
-                    </div>
-                    <div class="">
-                      <input
-                        type="text"
-                        id="course__institution"
-                        name="course__institution"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div class="">
-                    <div class="">
-                      <h3>Start & End Date</h3>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div class="hide__section">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-4 pt-5">
                       <div class="">
-                        <input
-                          type="date"
-                          id="course__date-start"
-                          name="course__date-start"
-                        />
+                        <div class="">
+                          <h3>Course</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="course__title"
+                            name="course__title"
+                          />
+                        </div>
                       </div>
                       <div class="">
-                        <input
-                          type="date"
-                          id="course__date-end"
-                          name="course__date-end"
-                        />
+                        <div class="">
+                          <h3 for="course__institution">Institution</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="course__institution"
+                            name="course__institution"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                      <div class="">
+                        <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
+                          <div class="grid grid-cols-2 gap-5">
+                            <div class="flex flex-col">
+                              <h3>Start Month</h3>
+                              <select
+                                name="course__start-month"
+                                id="course__start-month"
+                              >
+                                <option disabled selected>MM</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                              </select>
+                            </div>
+                            <div class="flex flex-col">
+                              <h3>Start Year</h3>
+                              <input type="text" name="course__start-year" id="course__start-year" placeholder="YYYY"/>
+                            </div>
+                          </div>
+                          <div class="">
+                            <div class="grid grid-cols-2 gap-5">
+                              <div class="flex flex-col">
+                                <h3>End Month</h3>
+                                <select
+                                  name="course__end-month"
+                                  id="course__end-month"
+                                >
+                                  <option disabled selected>MM</option>
+                                  <option value="January">January</option>
+                                  <option value="February">February</option>
+                                  <option value="March">March</option>
+                                  <option value="April">April</option>
+                                  <option value="May">May</option>
+                                  <option value="June">June</option>
+                                  <option value="July">July</option>
+                                  <option value="August">August</option>
+                                  <option value="September">September</option>
+                                  <option value="October">October</option>
+                                  <option value="November">November</option>
+                                  <option value="December">December</option>
+                                </select>
+                              </div>
+                              <div class="flex flex-col">
+                                <h3 for="">End Year</h3>
+                                <input type="text" name="course__end-year" id="course__end-year" placeholder="YYYY" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
+                id="add__course-btn"
                 class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
               >
                 <div class="mr-2">
@@ -751,45 +866,54 @@
                   </p>
                 </div>
               </div>
-              <div class="border border-2 border-[#eff2f9] border-solid p-5">
-                <div class="flex justify-between items-center">
-                  <div class="">
-                    <h4>English</h4>
-                  </div>
-                  <div class="">
-                    <i class="fa-solid fa-chevron-down"></i>
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-5">
-                  <div class="">
+              <div id="languages__list" class="flex flex-col gap-5">
+                <div
+                  class="language__card border border-2 border-[#eff2f9] border-solid p-5 relative"
+                >
+                  <div class="flex justify-between items-center section__card-header">
                     <div class="">
-                      <h3>Language</h3>
+                      <h4>(Untitled)</h4>
                     </div>
                     <div class="">
-                      <input
-                        type="text"
-                        id="language__name"
-                        name="language__name"
-                      />
+                      <i class="fa-solid fa-chevron-down"></i>
                     </div>
                   </div>
-                  <div class="">
-                    <div class="">
-                      <h3>Level</h3>
-                    </div>
-                    <div class="">
-                      <select name="language__level" id="language__level">
-                        <option disabled selected>Select Level</option>
-                        <option value="Begginer">Begginer</option>
-                        <option value="Intermediate">Intermediate</option>
-                        <option value="Advanced">Advanced</option>
-                        <option value="Native">Native</option>
-                      </select>
+                  <div class="hide__section">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-5">
+                      <div class="">
+                        <div class="">
+                          <h3>Language</h3>
+                        </div>
+                        <div class="">
+                          <input
+                            type="text"
+                            id="language__name"
+                            name="language__name"
+                          />
+                        </div>
+                      </div>
+                      <div class="">
+                        <div class="">
+                          <h3>Level</h3>
+                        </div>
+                        <div class="">
+                          <select name="language__level" id="language__level">
+                            <option disabled selected>Select Level</option>
+                            <option value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                            <option value="C1">C1</option>
+                            <option value="Native">Native</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
+                id="add__language-card"
                 class="w-full cursor-pointer py-2 px-4 hover:bg-[#eff2f9] rounded-md flex items-center mt-5"
               >
                 <div class="mr-2">
@@ -803,7 +927,6 @@
               </div>
             </div>
             <!-- <div class="enterest__section"></div> -->
-            <button type="submit" id="save__data">Submit</button>
           </form>
         </div>
       </div>
@@ -843,262 +966,10 @@
             </button>
           </div>
         </header>
-        <div class="previwe__section flex bg-white">
-          <!-- <p class="preview-name"></p>
-            <p class="preview-job-title"></p> -->
-          <div
-            class="resume__side h-full w-1/3 bg-[#082a4d] p-4 flex flex-col gap-2"
-          >
-            <div class="pic w-full h-28 bg-white p-1">
-              <div class="w-full h-full bg-[#5c6477] overflow-hidden">
-                <img
-                  class="w-full h-full object-cover"
-                  src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="pic"
-                />
-              </div>
-            </div>
-            <div class="contact leading-none pt-2">
-             
-            </div>
-            <div class="skills leading-none">
-              <span
-                class="section-name leading-normal text-[10px] font-medium uppercase text-white"
-                >skills</span
-              >
-              <ul class="mt-2 flex flex-col gap-1.5">
-                <li class="text-[8px] text-gray-200">html</li>
-                <li class="text-[8px] text-gray-200">css</li>
-                <li class="text-[8px] text-gray-200">JavaScript</li>
-                <li class="text-[8px] text-gray-200">Tailwind</li>
-                <li class="text-[8px] text-gray-200">GSAP</li>
-                <li class="text-[8px] text-gray-200">Axios</li>
-                <li class="text-[8px] text-gray-200">CI/CD</li>
-                <li class="text-[8px] text-gray-200">Php</li>
-                <li class="text-[8px] text-gray-200">SQL</li>
-              </ul>
-            </div>
-            <div class="languages leading-none">
-              <span
-                class="section-name leading-normal text-[10px] font-medium uppercase text-white"
-                >Languages</span
-              >
-              <ul class="mt-2 flex flex-col gap-1.5">
-                <li class="text-[8px] text-gray-200">Arabic | Native</li>
-                <li class="text-[8px] text-gray-200">English | Fluent</li>
-                <li class="text-[8px] text-gray-200">French | Intermediate</li>
-                <li class="text-[8px] text-gray-200">Germany | Basic</li>
-              </ul>
-            </div>
-            <div class="Interests leading-none">
-              <span
-                class="section-name leading-normal text-[10px] font-medium uppercase text-white"
-                >Interests</span
-              >
-              <ul class="mt-2 flex flex-col gap-1.5">
-                <li class="text-[8px] text-gray-200">Coding</li>
-                <li class="text-[8px] text-gray-200">Sport</li>
-                <li class="text-[8px] text-gray-200">Swimming</li>
-                <li class="text-[8px] text-gray-200">Learning</li>
-              </ul>
-            </div>
-          </div>
-          <div class="w-2/3 h-full p-4 leading-normal">
-            <div class="full-name leading-4 py-3">
-              
-            </div>
-            <div class="flex flex-col gap-2 mt-4">
-              <div class="summary" id="summary__section">
-                
-              </div>
-              <div class="experience">
-                <div
-                  class="prev__section-title leading-4 text-[10px] font-bold uppercase text-gray-700 border-b-2 border-gray-400"
-                >
-                  professional experience
-                </div>
-                <div class="flex flex-col gap-1">
-                  <div class="leading-4">
-                    <div
-                      class="flex justify-between items-center gap-3 leading-4"
-                    >
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >DevOps Enginner</span
-                        >
-                      </div>
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >Oct 2023 - Present</span
-                        >
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="">
-                        <ul class="ml-3 flex flex-col leading-none">
-                          <li
-                            class="text-[8px] text-gray-700 list-disc leading-normal"
-                          >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Consequatur, voluptas!
-                          </li>
-                          <li
-                            class="text-[8px] text-gray-700 list-disc leading-normal"
-                          >
-                            Lorem ipsum dolor si ipisicing elit. Consequatur,
-                            voluptas!
-                          </li>
-                          <li
-                            class="text-[8px] text-gray-700 list-disc leading-normal"
-                          >
-                            Lorem ipsum adipisicing elit. Consequatur, voluptas!
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="leading-4">
-                    <div
-                      class="flex justify-between items-center gap-3 leading-4"
-                    >
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >DevOps Enginner</span
-                        >
-                      </div>
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >Oct 2023 - Present</span
-                        >
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="">
-                        <ul class="ml-3 flex flex-col leading-none">
-                          <li
-                            class="text-[8px] text-gray-700 list-disc leading-normal"
-                          >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Consequatur, voluptas!
-                          </li>
-                          <li
-                            class="text-[8px] text-gray-700 list-disc leading-normal"
-                          >
-                            Lorem ipsum dolor si ipisicing elit. Consequatur,
-                            voluptas!
-                          </li>
-                          <li
-                            class="text-[8px] text-gray-700 list-disc leading-normal"
-                          >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Consequatur, voluptas!
-                          </li>
-                          <li
-                            class="text-[8px] text-gray-700 list-disc leading-normal"
-                          >
-                            Lorem ipsum adipisicing elit. Consequatur, voluptas!
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="education">
-                <div
-                  class="prev__section-title leading-4 text-[10px] font-bold uppercase text-gray-700 border-b-2 border-gray-400"
-                >
-                  Education
-                </div>
-                <div class="flex flex-col gap-0.5">
-                  <div class="leading-4">
-                    <div
-                      class="flex justify-between items-center gap-3 leading-4"
-                    >
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >YouCode | UM6P</span
-                        >
-                      </div>
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >Sep 2024 - Present</span
-                        >
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="">
-                        <p class="text-[8px] text-gray-700 leading-normal">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Qui, doloremque!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="leading-4">
-                    <div
-                      class="flex justify-between items-center gap-3 leading-4"
-                    >
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >Baccalaureate Science Humain</span
-                        >
-                      </div>
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >Jun 2021</span
-                        >
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="">
-                        <p class="text-[8px] text-gray-700 leading-normal">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Qui, doloremque!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="courses">
-                <div
-                  class="prev__section-title leading-4 text-[10px] font-bold uppercase text-gray-700 border-b-2 border-gray-400"
-                >
-                  Certificats & Courses
-                </div>
-                <div class="flex flex-col gap-0.5">
-                  <div class="leading-4">
-                    <div
-                      class="flex justify-between items-center gap-3 leading-4"
-                    >
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >DevOps Course</span
-                        >
-                      </div>
-                      <div class="">
-                        <span class="text-[8px] text-gray-800 font-medium"
-                          >Oct 2024 - Present</span
-                        >
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="">
-                        <p class="text-[8px] text-gray-700 leading-normal">
-                          Étudiant en DevOps sur Udemy, avec apprentissage de
-                          CI/CD et de l'automatisation via Docker, Kubernetes,
-                          Jenkins, et Git pour optimiser le développement et les
-                          déploiements.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="resume__container">
+
         </div>
+        
       </div>
     </main>
     <script src="../js/main.js"></script>
