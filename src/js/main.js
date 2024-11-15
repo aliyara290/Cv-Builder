@@ -1,7 +1,3 @@
-const quill = new Quill(".descriptions", {
-  theme: "snow",
-});
-
 const hamburgerIcon = document.querySelector("#hamburger__icon");
 const svgIcon = document.querySelectorAll(".circle_hide");
 const navMenu = document.querySelector("#nav__menu");
@@ -28,7 +24,20 @@ const closeMenu = (e) => {
 hamburgerIcon.addEventListener("click", toggleMenu);
 window.addEventListener("click", closeMenu);
 
+
 let resumeArr = [];
+const saveData = () => {
+  localStorage.setItem("resumeData", JSON.stringify(resumeArr))
+}
+
+function getData() {
+  const storedData = localStorage.getItem("resumeData");
+  if (storedData) {
+    parseData = JSON.parse(storedData);
+  }
+}
+
+getData()
 
 const resumeData = () => {
   resumeArr = [];
@@ -36,6 +45,7 @@ const resumeData = () => {
   const personalDetails = {
     jobTitle: document.getElementById("job__title").value,
     firstName: document.getElementById("first__name").value,
+    userImg: document.getElementById("first__name").value,
     lastName: document.getElementById("last__name").value,
     email: document.getElementById("input__email").value,
     website: document.getElementById("input__website").value,
@@ -65,7 +75,7 @@ const resumeData = () => {
           .value.substring(0, 3),
         endDateYear: experience.querySelector("[name='exp__end-year']").value,
         city: experience.querySelector("[name='input__city-ex']").value,
-        description: quill.root.innerHTML,
+        description: experience.querySelector("#textarea__experience").value,
       };
       experiences.push(experienceObj);
     });
@@ -142,22 +152,16 @@ const resumeData = () => {
     languages,
   ];
   preview();
+  
   console.log(resumeArr);
 };
 
 document.querySelectorAll("input, textarea").forEach((inputField) => {
   inputField.addEventListener("input", () => {
     resumeData();
-    console.log(resumeArr);
+    saveData()
   });
 });
-
-// editors.forEach((quill) => {
-//   quill.on("text-change", () => {
-//     resumeData();
-//     preview();
-//   });
-// });
 
 function preview() {
   const [
@@ -170,15 +174,14 @@ function preview() {
     languages,
   ] = resumeArr;
 
-  document.querySelector(".resume__container").innerHTML = `
-    <div class="preview__section h-full flex bg-white">
+  document.querySelector(".preview__section").innerHTML = `
       <div class="resume__side h-full w-1/3 bg-[#082a4d] p-4 flex flex-col gap-2">
         <div class="pic w-full h-28 bg-white p-1">
           <div class="w-full h-full bg-[#5c6477] overflow-hidden">
             <img
-              class="w-full h-full object-cover"
-              src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg"
-              alt="Profile Picture"
+              class="w-full h-full object-cover cv__img-prv"
+              src="../../src/images/user--plasholder.png"
+              alt="pic"
             />
           </div>
         </div>
@@ -298,14 +301,11 @@ function preview() {
           </div>
         </div>
       </div>
-    </div>
   `;
+
 }
 
 // dynamic forms
-
-
-
 
 // experience dynamic form
 const experiencesList = document.querySelector("#experiences__list");
@@ -317,44 +317,52 @@ addExpBtn.addEventListener("click", () => {
   let newDiv = document.createElement("div");
   newDiv.classList.add("section__delete-btn");
   newDiv.innerHTML = `
-  <i class="fa-regular fa-trash-can text-xl text-[#c6cbd8]"></i>
+    <i class="fa-regular fa-trash-can text-xl text-[#c6cbd8]"></i>
   `;
+
+  // Append the cloned form and delete button
   experiencesList.appendChild(newExperienceForm);
   newExperienceForm.appendChild(newDiv);
-  // hide all inputs card
+
+  // Hide all existing cards
   experiencesList.querySelectorAll(".hide__section").forEach((card) => {
     card.classList.add("active");
-    // const rotateIcon = experienceForm.querySelectorAll(".section__card-header i");
-    // rotateIcon.forEach((icon) => {
-
-    //   icon.classList.toggle("active")
-    // })
   });
-  // show the new input card
-  const hideSection = newExperienceForm.querySelector(".hide__section")
+
+  // Show the new input card
+  const hideSection = newExperienceForm.querySelector(".hide__section");
   hideSection.classList.remove("active");
-  // clear the new form fields values
-  const inputs = newExperienceForm.querySelectorAll("input");
-  inputs.forEach((input) => (input.value = ""));
-  // clear the new section quill editor content
-  newExperienceForm.querySelector(".ql-editor").innerHTML = "";
-  // delete the children
+
+
+  // Clear the new form fields values
+  newExperienceForm
+    .querySelectorAll("input")
+    .forEach((input) => (input.value = ""));
+
+  // clear the new form description content
+
+  newExperienceForm.querySelector("#textarea__experience").value = ""
+
+  // Delete the new card on clicking the delete button
   newDiv.addEventListener("click", () => {
     experiencesList.removeChild(newExperienceForm);
   });
+});
 
-  
-  // show the section content 
-  let allSection = document.querySelectorAll(".experience__card");
-
-  allSection.forEach((section) => {
-    section.addEventListener("click", () => {
-      const toggleSection = section.querySelector(".hide__section")
-      toggleSection.classList.toggle("active");
-      const rotateIcon = section.querySelector(".section__card-header i");
-      rotateIcon.classList.toggle("active")
-    })
-  })
+// Toggle section visibility on clicking headers using event delegation
+experiencesList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("section__card-header")) {
+    const content = e.target.nextElementSibling;
+    if (content && content.classList.contains("hide__section")) {
+      content.classList.toggle("active");
+      
+      // Target the icon within the clicked header
+      const rotateIcon = e.target.querySelector(".fa-chevron-down");
+      if (rotateIcon) {
+        rotateIcon.classList.toggle("active");
+      }
+    }
+  }
 });
 
 // education dynamic form
@@ -379,13 +387,28 @@ addEducationBtn.addEventListener("click", () => {
   });
   // show the new input card
   newEducationForm.querySelector(".hide__section").classList.remove("active");
-    // clear the new form fields values
+  // clear the new form fields values
   const inputs = newEducationForm.querySelectorAll("input");
   inputs.forEach((input) => (input.value = ""));
   // delete the children
   newDiv.addEventListener("click", () => {
     educationsList.removeChild(newEducationForm);
   });
+});
+
+educationsList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("section__card-header")) {
+    const content = e.target.nextElementSibling;
+    if (content && content.classList.contains("hide__section")) {
+      content.classList.toggle("active");
+
+      // Target the icon within the clicked header
+      const rotateIcon = e.target.querySelector(".fa-chevron-down");
+      if (rotateIcon) {
+        rotateIcon.classList.toggle("active");
+      }
+    }
+  }
 });
 
 // skills dynamic form
@@ -403,11 +426,34 @@ addSkillBtn.addEventListener("click", () => {
   `;
   skillsList.appendChild(newSkillForm);
   newSkillForm.appendChild(newDiv);
+
+  // hide all inputs card
+  skillsList.querySelectorAll(".hide__section").forEach((card) => {
+    card.classList.add("active");
+  });
+  // show the new input card
+  newSkillForm.querySelector(".hide__section").classList.remove("active");
+
   const inputs = newSkillForm.querySelectorAll("input");
   inputs.forEach((input) => (input.value = ""));
   newDiv.addEventListener("click", () => {
     skillsList.removeChild(newSkillForm);
   });
+});
+
+skillsList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("section__card-header")) {
+    const content = e.target.nextElementSibling;
+    if (content && content.classList.contains("hide__section")) {
+      content.classList.toggle("active");
+      
+      // Target the icon within the clicked header
+      const rotateIcon = e.target.querySelector(".fa-chevron-down");
+      if (rotateIcon) {
+        rotateIcon.classList.toggle("active");
+      }
+    }
+  }
 });
 
 // courses dynamic form
@@ -425,12 +471,35 @@ addCourseBtn.addEventListener("click", () => {
   `;
   coursesList.appendChild(newCourseForm);
   newCourseForm.appendChild(newDiv);
+
+  // hide all inputs card
+  coursesList.querySelectorAll(".hide__section").forEach((card) => {
+    card.classList.add("active");
+  });
+  // show the new input card
+  newCourseForm.querySelector(".hide__section").classList.remove("active");
   const inputs = newCourseForm.querySelectorAll("input");
   inputs.forEach((input) => (input.value = ""));
 
   newDiv.addEventListener("click", () => {
     coursesList.removeChild(newCourseForm);
+
   });
+});
+
+coursesList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("section__card-header")) {
+    const content = e.target.nextElementSibling;
+    if (content && content.classList.contains("hide__section")) {
+      content.classList.toggle("active");
+      
+      // Target the icon within the clicked header
+      const rotateIcon = e.target.querySelector(".fa-chevron-down");
+      if (rotateIcon) {
+        rotateIcon.classList.toggle("active");
+      }
+    }
+  }
 });
 
 // languages dynamic form
@@ -448,9 +517,113 @@ addLanguageBtn.addEventListener("click", () => {
   `;
   languagesList.appendChild(newLanguageForm);
   newLanguageForm.appendChild(newDiv);
+  // hide all inputs card
+  languagesList.querySelectorAll(".hide__section").forEach((card) => {
+    card.classList.add("active");
+  });
+  // show the new input card
+  newLanguageForm.querySelector(".hide__section").classList.remove("active");
   const inputs = newLanguageForm.querySelectorAll("input");
   inputs.forEach((input) => (input.value = ""));
   newDiv.addEventListener("click", () => {
     languagesList.removeChild(newLanguageForm);
   });
 });
+
+languagesList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("section__card-header")) {
+    const content = e.target.nextElementSibling;
+    if (content && content.classList.contains("hide__section")) {
+      content.classList.toggle("active");
+      // Target the icon within the clicked header
+      const rotateIcon = e.target.querySelector(".fa-chevron-down");
+      if (rotateIcon) {
+        rotateIcon.classList.toggle("active");
+      }
+    }
+  }
+});
+
+function previewImage(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    const preview = document.querySelectorAll('.cv__img-prv');
+    preview.forEach((pic) => {
+      pic.src = e.target.result;
+    })
+  }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
+
+const btndwlond = document.querySelector("#download__pdf");
+const resumeResult = document.querySelector(".resume__container");
+
+btndwlond.addEventListener("click", async function () {
+  const filename = "my-cv.pdf";
+
+  const options = {
+    margin: 0,
+    filename: filename,
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 5 },
+    jsPDF: { unit: "px", format: "letter", orientation: "portrait" },
+  };
+  try {
+    await html2pdf().set(options).from(resumeResult).save();
+  } catch (error) {
+    console.error("false:", error.message);
+  }
+});
+
+
+// Function to check if a section is filled
+function checkSectionFilled(sectionId, stepId) {
+  const inputs = document.querySelectorAll(`.${sectionId} input`);
+  const step = document.getElementById(stepId);
+
+  // Check if all inputs in the section are filled
+  const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+
+  if (allFilled) {
+    step.classList.add('bg-blue-700', 'text-white'); // Mark as completed
+    step.classList.remove('bg-white', 'text-blue-700'); // Reset other steps
+  } else {
+    step.classList.remove('bg-blue-700', 'text-white'); // Mark as incomplete
+    step.classList.add('bg-white', 'text-blue-700'); // Reset to default
+  }
+}
+
+// Example: Add event listeners to inputs in each section
+document.querySelectorAll('section').forEach((section, index) => {
+  section.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', () => {
+      checkSectionFilled(section.className, `step-${index + 1}`);
+    });
+  });
+});
+
+// foe summary text area
+
+const summaryTextarea = document.querySelector('#textarea__summary');
+const checkTextarea = () => {
+  if(summaryTextarea.value.trim() !== "") {
+    const stepTwo = document.getElementById('step-2');
+    stepTwo.classList.add('bg-blue-700', 'text-white');
+    stepTwo.classList.remove('bg-white', 'text-blue-700');
+  } else {
+    const stepTwo = document.getElementById('step-2');
+      stepTwo.classList.remove('bg-blue-700', 'text-white');
+      stepTwo.classList.add('bg-white', 'text-blue-700');
+    }
+
+}
+
+summaryTextarea.addEventListener('input', checkTextarea);
+
+
